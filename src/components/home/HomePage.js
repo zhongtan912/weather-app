@@ -1,10 +1,12 @@
 import React from "react";
 import { Container } from '@material-ui/core';
+import SearchBar from "../common/SearchBar";
+
 
 const HomePage = () => (
   <Container>
     <h1>Weather App</h1>
-    <p>Weather application</p>
+    <SearchBar />
   </Container>
 );
 

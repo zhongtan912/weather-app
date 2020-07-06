@@ -23,6 +23,10 @@ module.exports = {
     https: false
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env.API_URL": JSON.stringify("https://api.openweathermap.org/data/2.5"),
+      "process.env.API_KEY": JSON.stringify("fd1b717d1758095468f486a8ba98c46e")
+    }),
     new HtmlWebpackPlugin({
       template: "src/index.html",
       favicon: "src/favicon.ico"
