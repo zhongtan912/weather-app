@@ -1,5 +1,5 @@
-import { handleResponse, handleError } from "./apiUtils";
-import axios from "axios";
+import { handleResponse, handleError } from './apiUtils';
+import axios from 'axios';
 const baseUrl = process.env.API_URL;
 
 async function getWeather(location) {
