@@ -39,7 +39,7 @@ function SearchBar(props) {
             try {
                 const res = await getWeather(searchTerm);
                 console.log(res);
-                alert(searchTerm);
+                alert(JSON.stringify(res.main));
                 setHasError(false);
             } catch (err) {
                 console.log(err);
