@@ -2,27 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Container } from '@material-ui/core';
 import SearchBar from './SearchBar';
+import WeatherCard from './Weather';
+import ForecastCard from './Forecast';
 
 
 function HomePage(props) {
 
-  const { weather, forecast } = props;
+  const { weather, forecast, error } = props;
 
   useEffect(() => {
     console.log(props);
-    if (typeof weather !== 'undefined' && Object.keys(weather).length > 0) {
-      console.log('weather', weather.main);
-      //alert(JSON.stringify(props.weather.main));
-    }
-    if (typeof forecast !== 'undefined' && forecast.length > 0) {
-      console.log('forecast', forecast[0]);
-    }
   }, [props]);
 
   return (
     <Container>
       <h1>Weather App</h1>
       <SearchBar />
+      {Object.keys(weather).length > 0 && <WeatherCard weather={weather} />}
+      {forecast.length > 0 && <ForecastCard forecast={forecast} />}
     </Container>
   );
 }
