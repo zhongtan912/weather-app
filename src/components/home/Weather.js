@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     },
 });
 
-function Weather(props) {
+export default function Weather(props) {
     const classes = useStyles();
     const { weather } = props;
     const bull = <span className={classes.bullet}>•</span>;
@@ -35,7 +35,7 @@ function Weather(props) {
                     Word of the Day
         </Typography>
                 <Typography variant="h5" component="h2">
-                    {JSON.stringify(weather.main)}
+                    {JSON.stringify(weather)}
                 </Typography>
                 <Typography className={classes.pos} color="textSecondary">
                     adjective
@@ -52,5 +52,3 @@ function Weather(props) {
         </Card>
     );
 }
-
-export default Weather;

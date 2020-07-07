@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +18,7 @@ function renderDetails(forecast) {
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
         //console.log(curr);
-        cards.push(<Grid key={i} item xs={3}><p>{(curr.main.temp)}</p></Grid>);
+        cards.push(<Grid key={i} item xs={3}><p>{(curr.temperature)}</p></Grid>);
     }
 
     return cards;
