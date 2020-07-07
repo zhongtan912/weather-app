@@ -10,7 +10,6 @@ export async function handleResponse(response) {
 
 export function handleError(error) {
   console.log(error);
-  // eslint-disable-next-line no-console
   console.error('API call failed. ' + error);
   throw error;
 }

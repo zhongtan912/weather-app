@@ -11,7 +11,7 @@ function HomePage(props) {
   const { weather, forecast, error } = props;
 
   useEffect(() => {
-    console.log(props);
+    //console.log(props);
   }, [props]);
 
   return (
@@ -44,7 +44,7 @@ function mapWeather(data) {
     icon_id: data.weather[0].id,
     temperature: data.main.temp,
     description: data.weather[0].description,
-    wind_speed: Math.round(data.wind.speed * 3.6), // convert from m/s to km/h
+    wind_speed: data.wind.speed,
     condition: data.cod
   };
 }
