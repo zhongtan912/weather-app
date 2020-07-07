@@ -10,4 +10,13 @@ async function getWeather(location) {
         .catch(handleError);
 }
 
-export default getWeather;
+async function getForecast(location) {
+    const newurl = `${baseUrl}/forecast/?q=${location}&units=metric&APPID=${process.env.API_KEY}`;
+    console.log(newurl);
+    return axios.get(newurl)
+        .then(handleResponse)
+        .catch(handleError);
+}
+
+
+export { getWeather, getForecast };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import getWeather from '../../api/weatherApi';
+import { connect } from 'react-redux';
+import * as weatherActions from '../../redux/actions/weatherActions';
 import SearchInput from './SearchInput';
 
 
@@ -10,20 +11,10 @@ function SearchBar(props) {
     const [hasError, setHasError] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleSubmit = async event => {
+    const handleSubmit = event => {
         event.preventDefault();
         setSearching(true);
-        try {
-            const res = await getWeather(searchTerm);
-            console.log(res);
-            alert(JSON.stringify(res.main));
-            setSearching(false);
-        } catch (err) {
-            console.log(err);
-            setError('Incorrect city name');
-            setHasError(true);
-            setSearching(false);
-        }
+        props.loadWeather(searchTerm);
     }
 
     const handleChange = event => {
@@ -33,10 +24,18 @@ function SearchBar(props) {
     };
 
     useEffect(() => {
-        if (searchTerm) {
-            // console.log(searchTerm);
+        console.log(props);
+        if (props.error) {
+            console.log(props.error);
+            setError('Incorrect city name');
+            setHasError(true);
+            setSearching(false);
         }
-    }, [searchTerm, isSearching]);
+        else if (typeof props.weather !== 'undefined' && Object.keys(props.weather).length > 0) {
+            alert(JSON.stringify(props.weather.main));
+            setSearching(false);
+        }
+    }, [props]);
 
     return (
         <SearchInput
@@ -49,4 +48,17 @@ function SearchBar(props) {
     );
 }
 
-export default SearchBar;
+function mapStateToProps(state) {
+    return { ...state }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        loadWeather: (location) => dispatch(weatherActions.loadWeather(location)),
+        loadForecast: (location) => dispatch(weatherActions.loadForecast(location))
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps)(SearchBar);
