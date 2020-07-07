@@ -46,6 +46,7 @@
 		"jest": "^24.5.0",
 		"json-server": "^0.16.1",
 		"mini-css-extract-plugin": "^0.5.0",
+		"node-fetch": "^2.3.0",
 		"npm-run-all": "^4.1.5",
 		"postcss-loader": "^3.0.0",
 		"react-test-renderer": "^16.8.4",
@@ -92,12 +93,19 @@
 			"no-console": "off",
 			"no-unused-vars": "warn",
 			"react/prop-types": "off",
-			"quotes": [2, "single", "avoid-escape"],
+			"quotes": [
+				2,
+				"single",
+				"avoid-escape"
+			],
 			"prefer-const": "error",
-			"prefer-destructuring": ["warn", {
-				"object": true,
-				"array": true
-			}],
+			"prefer-destructuring": [
+				"warn",
+				{
+					"object": true,
+					"array": true
+				}
+			],
 			"prefer-arrow-callback": "warn"
 		},
 		"settings": {
