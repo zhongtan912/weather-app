@@ -1437,8 +1437,8 @@ const mappedWeather = {
   'condition': 200
 };
 
-const mappedForecast = {
-  'forecast': [
+const mappedForecast =
+  [
     {
       'date': 'Wednesday, July 8',
       'humidity': 86,
@@ -1494,8 +1494,7 @@ const mappedForecast = {
       'maxtemp': 14.61,
       'day': 'Sunday'
     }
-  ]
-};
+  ];
 
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
