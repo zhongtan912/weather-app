@@ -19,7 +19,7 @@ const theme = createMuiTheme({
       main: '#d32f2f'
     },
     typography: {
-      fontFamily: ['IBM Plex Sans', 'sans-serif'],
+      fontFamily: ['IBM Plex Sans', 'Montserrat', 'sans-serif'],
       button: {
         textTransform: 'none'
       }

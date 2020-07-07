@@ -1,12 +1,13 @@
 import React from 'react';
+import { Container, Typography } from '@material-ui/core';
 
 const AboutPage = () => (
-  <div>
-    <h2>About</h2>
-    <p>
+  <Container>
+    <Typography variant="h2" component="h2" gutterBottom>About</Typography>
+    <Typography variant="body1" gutterBottom>
       This weather app uses React, Redux, React Router and MetaWeather API
-    </p>
-  </div>
+    </Typography>
+  </Container>
 );
 
 export default AboutPage;

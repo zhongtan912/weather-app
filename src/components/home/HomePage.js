@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import SearchBar from './SearchBar';
 import WeatherCard from './Weather';
 import ForecastCard from './Forecast';
@@ -16,7 +16,7 @@ function HomePage(props) {
 
   return (
     <Container>
-      <h1>Weather App</h1>
+      <Typography variant="h1" component="h2" gutterBottom>Weather App</Typography>
       <SearchBar />
       {(!error && Object.keys(weather).length > 0) && <WeatherCard weather={weather} />}
       {(!error && forecast.length > 0) && <ForecastCard forecast={forecast} />}
@@ -35,7 +35,6 @@ function mapStateToProps(state) {
 }
 
 function mapWeather(data) {
-  //TODO map date by the timezone of the location
   return {
     city: data.name,
     country: data.sys.country,
