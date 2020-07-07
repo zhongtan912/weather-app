@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Container, Typography } from '@material-ui/core';
 import SearchBar from './SearchBar';

@@ -5,6 +5,6 @@ const WeatherIcons = {
     6: 'wi-snow',
     7: 'wi-dust',
     8: 'wi-cloud'
-}
+};
 
 module.exports = WeatherIcons;

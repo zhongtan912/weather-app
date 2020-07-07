@@ -9,12 +9,12 @@ export function loadWeather(location) {
             dispatch({
                 type: types.GET_WEATHER_SUCCESS,
                 data: res
-            })
+            });
         } catch (err) {
             dispatch({ type: types.API_CALL_ERROR, data: err });
         }
 
-    }
+    };
 }
 
 export function loadForecast(location) {
@@ -25,10 +25,10 @@ export function loadForecast(location) {
             dispatch({
                 type: types.GET_FORECAST_SUCCESS,
                 data: res.list
-            })
+            });
         } catch (err) {
             dispatch({ type: types.API_CALL_ERROR, data: err });
         }
 
-    }
+    };
 }

@@ -62,6 +62,6 @@ const SearchInput = (props) => {
             </Grid>
         </div>
     );
-}
+};
 
 export default SearchInput;

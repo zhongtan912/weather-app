@@ -4,7 +4,6 @@ import * as weatherActions from '../../redux/actions/weatherActions';
 import SearchInput from './SearchInput';
 
 
-
 function SearchBar(props) {
     const [location, setLocation] = useState('');
     const [isSearching, setSearching] = useState(false);
@@ -16,7 +15,7 @@ function SearchBar(props) {
         setSearching(true);
         props.loadWeather(location);
         props.loadForecast(location);
-    }
+    };
 
     const handleChange = event => {
         setSearching(false);
@@ -28,7 +27,7 @@ function SearchBar(props) {
         //console.log(props);
         if (props.error) {
             console.log(props.error);
-            setError('Incorrect city name');
+            setError('No city found');
             setHasError(true);
             setSearching(false);
         }
@@ -49,14 +48,14 @@ function SearchBar(props) {
 }
 
 function mapStateToProps(state) {
-    return { ...state }
+    return { ...state };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         loadWeather: (location) => dispatch(weatherActions.loadWeather(location)),
         loadForecast: (location) => dispatch(weatherActions.loadForecast(location))
-    }
+    };
 }
 
 export default connect(

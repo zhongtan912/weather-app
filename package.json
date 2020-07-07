@@ -2,7 +2,8 @@
 	"name": "weather-app",
 	"scripts": {
 		"start": "webpack-dev-server --config webpack.config.dev.js --port 3000",
-		"test": "jest --watch"
+		"test": "jest --watch",
+		"lint": "eslint '**/*.js'"
 	},
 	"jest": {
 		"setupFiles": [
@@ -90,11 +91,11 @@
 			"no-unused-vars": "warn",
 			"react/prop-types": "off",
 			"quotes": [
-				2,
+				1,
 				"single",
 				"avoid-escape"
 			],
-			"prefer-const": "error",
+			"prefer-const": "warn",
 			"prefer-destructuring": [
 				"warn",
 				{
@@ -102,7 +103,8 @@
 					"array": true
 				}
 			],
-			"prefer-arrow-callback": "warn"
+			"prefer-arrow-callback": "warn",
+			"semi": "warn"
 		},
 		"settings": {
 			"react": {
