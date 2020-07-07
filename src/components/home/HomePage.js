@@ -28,7 +28,7 @@ function mapStateToProps(state) {
   if (state.error)
     return { ...state };
 
-  console.log(state);
+  //console.log(state);
   const weather = (Object.keys(state.weather).length > 0) ? mapWeather(state.weather) : state.weather;
   const forecast = (state.forecast.length > 0) ? mapForecast(state.forecast) : state.forecast;
   return { weather, forecast, error: null };

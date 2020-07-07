@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Card, CardMedia, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
 
@@ -19,19 +19,24 @@ function renderDetails(forecast) {
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
-        console.log(curr);
+        //console.log(curr);
         cards.push(
             <Grid key={i} item xs>
-
-                <p>{curr.day}</p>
-                <span style={{ flex: '1 1 0%', textAlign: 'right' }}>
-                    <Typography variant="body2" component="span" color="textPrimary">
-                        {Math.round(curr.mintemp)}&deg; /{' '}
-                    </Typography>
-                    <Typography variant="body2" component="span" color="textSecondary">
-                        {Math.round(curr.maxtemp)}&deg;
+                <Card>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {curr.day}
+                        </Typography>
+                        <span style={{ flex: '1 1 0%', textAlign: 'right' }}>
+                            <Typography variant="body2" component="span" color="textPrimary">
+                                {Math.round(curr.mintemp)}&deg; /{' '}
+                            </Typography>
+                            <Typography variant="body2" component="span" color="textSecondary">
+                                {Math.round(curr.maxtemp)}&deg;
           </Typography>
-                </span>
+                        </span>
+                    </CardContent>
+                </Card>
             </Grid>);
     }
 
@@ -44,7 +49,7 @@ export default function Forecast(props) {
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={3}>
+            <Grid container spacing={0}>
                 {renderDetails(forecast)}
             </Grid>
         </div>
