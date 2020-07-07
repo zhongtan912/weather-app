@@ -82,7 +82,13 @@
 			"no-console": "off",
 			"no-unused-vars": "warn",
 			"react/prop-types": "warn",
-			"quotes": [2, "single", "avoid-escape"]
+			"quotes": [2, "single", "avoid-escape"],
+			"prefer-const": "error",
+			"prefer-destructuring": ["warn", {
+				"object": true,
+				"array": true
+			}],
+			"prefer-arrow-callback": "warn"
 		},
 		"settings": {
 			"react": {

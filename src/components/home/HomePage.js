@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import SearchBar from '../common/SearchBar';
+import SearchBar from './SearchBar';
 
 
 const HomePage = () => (
