@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 const Header = () => {
   return (
 
-    <AppBar position="static">
+    <AppBar position="static" style={{ marginBottom: '15px' }}>
       <Tabs
         variant="fullWidth"
         aria-label="nav tabs example"
