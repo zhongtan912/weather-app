@@ -16,7 +16,7 @@ function HomePage(props) {
 
   return (
     <Container>
-      <Typography variant="h1" component="h2" gutterBottom>Weather App</Typography>
+      <Typography variant="h2" gutterBottom>Weather App</Typography>
       <SearchBar />
       {(!error && Object.keys(weather).length > 0) && <WeatherCard weather={weather} />}
       {(!error && forecast.length > 0) && <ForecastCard forecast={forecast} />}
@@ -38,7 +38,7 @@ function mapWeather(data) {
   return {
     city: data.name,
     country: data.sys.country,
-    date: new Date(data.dt * 1000).toLocaleString('en-US'),
+    date: new Date(data.dt * 1000).toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
     humidity: data.main.humidity,
     icon_id: data.weather[0].id,
     temperature: data.main.temp,

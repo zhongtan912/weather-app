@@ -20,8 +20,8 @@ const theme = createMuiTheme({
     },
     typography: {
       fontFamily: ['IBM Plex Sans', 'Montserrat', 'sans-serif'],
-      button: {
-        textTransform: 'none'
+      h2: {
+        paddingTop: '15px'
       }
     }
   }
@@ -30,7 +30,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      {/* <Header /> */}
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/about" component={AboutPage} />

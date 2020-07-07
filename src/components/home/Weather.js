@@ -11,8 +11,12 @@ const useStyles = makeStyles({
     root: {
         minWidth: 275,
     },
-    icons: {
-        width: '20px'
+    header: {
+        textAlign: 'center'
+    },
+    content: {
+        display: 'flex',
+        flexDirection: 'row'
     }
 });
 
@@ -25,26 +29,22 @@ export default function Weather(props) {
 
     return (
         <Card className={classes.root}>
-            <CardHeader
+            <CardHeader className={classes.header}
                 title={weather.city + ', ' + weather.country}
                 subheader={weather.date} />
-            <CardContent>
-                <Typography
-                    variant="h2"
-                    style={{ fontFamily: 'Montserrat', paddingTop: '30px' }}
-                >
-                    {Math.round(weather.temperature)}&deg;C
+            <CardContent className={classes.content}>
+                <Typography variant="h2" style={{ fontFamily: 'Montserrat' }}>
+                    {Math.round(weather.temperature)}&deg;
         </Typography>
-                <CardMedia className={iconstr} style={{ fontSize: '100px' }}></CardMedia>
+                <i className={iconstr} style={{ fontSize: '70px' }} component='div'></i>
+            </CardContent>
+            <CardContent className={classes.content}>
                 <Typography
                     variant="subtitle2"
                     color="textSecondary"
                     gutterBottom
-                    style={{ paddingTop: '40px' }}
                 >
-                    {desc} <br />
-                    {weather.wind_speed} m/s Winds <br />
-                    {weather.humidity}% Humidity
+                    {desc} / {weather.wind_speed}ms
         </Typography>
             </CardContent>
         </Card >

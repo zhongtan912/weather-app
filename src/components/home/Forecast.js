@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, CardMedia, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+import WeatherIcons from './WeatherIcons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +21,8 @@ function renderDetails(forecast) {
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
         //console.log(curr);
+        const icon = WeatherIcons[Math.floor((curr.icon_id) / 100)];
+        const iconstr = `wi ${icon}`;
         cards.push(
             <Grid key={i} item xs>
                 <Card>
@@ -27,14 +30,13 @@ function renderDetails(forecast) {
                         <Typography gutterBottom variant="h5" component="h2">
                             {curr.day}
                         </Typography>
-                        <span style={{ flex: '1 1 0%', textAlign: 'right' }}>
-                            <Typography variant="body2" component="span" color="textPrimary">
-                                {Math.round(curr.mintemp)}&deg; /{' '}
-                            </Typography>
-                            <Typography variant="body2" component="span" color="textSecondary">
-                                {Math.round(curr.maxtemp)}&deg;
+                        <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px' }} component='div'></i>
+                        <Typography variant="body2" component="span" color="textPrimary">
+                            {Math.round(curr.mintemp)}&deg; /{' '}
+                        </Typography>
+                        <Typography variant="body2" component="span" color="textSecondary">
+                            {Math.round(curr.maxtemp)}&deg;
           </Typography>
-                        </span>
                     </CardContent>
                 </Card>
             </Grid>);
