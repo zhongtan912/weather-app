@@ -28,16 +28,18 @@ function mapStateToProps(state) {
   if (state.error)
     return { ...state };
 
+  console.log(state);
   const weather = (Object.keys(state.weather).length > 0) ? mapWeather(state.weather) : state.weather;
   const forecast = (state.forecast.length > 0) ? mapForecast(state.forecast) : state.forecast;
   return { weather, forecast, error: null };
 }
 
 function mapWeather(data) {
+  //TODO map date by the timezone of the location
   return {
     city: data.name,
     country: data.sys.country,
-    date: data.dt * 1000,
+    date: new Date(data.dt * 1000).toLocaleString('en-US'),
     humidity: data.main.humidity,
     icon_id: data.weather[0].id,
     temperature: data.main.temp,
@@ -48,7 +50,16 @@ function mapWeather(data) {
 }
 
 function mapForecast(list) {
-  return list.map(data => mapWeather(data));
+  return list.filter((elem, index) => {
+    return index >= 4 && ((index - 4) % 8 == 0);
+  })
+    .map((data) => {
+      const mapped = mapWeather(data);
+      mapped.mintemp = data.main.temp_min;
+      mapped.maxtemp = data.main.temp_max;
+      mapped.day = new Date(data.dt * 1000).toLocaleString('en-US', { weekday: 'long' });
+      return mapped;
+    });
 }
 
 

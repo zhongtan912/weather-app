@@ -17,8 +17,8 @@ function renderDetails(forecast) {
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
-        //console.log(curr);
-        cards.push(<Grid key={i} item xs={3}><p>{(curr.temperature)}</p></Grid>);
+        console.log(curr);
+        cards.push(<Grid key={i} item xs={3}><p>{(`${curr.day}/${curr.mintemp}/${curr.maxtemp}`)}</p></Grid>);
     }
 
     return cards;

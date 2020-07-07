@@ -25,7 +25,7 @@ function SearchBar(props) {
     };
 
     useEffect(() => {
-        console.log(props);
+        //console.log(props);
         if (props.error) {
             console.log(props.error);
             setError('Incorrect city name');
