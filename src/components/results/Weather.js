@@ -20,6 +20,7 @@ const useStyles = makeStyles({
 });
 
 export default function Weather(props) {
+
     const classes = useStyles();
     const { weather } = props;
     const desc = weather.description.split(' ').map(word => (word.charAt(0).toUpperCase() + word.slice(1))).join(' ');

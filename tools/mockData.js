@@ -1425,9 +1425,83 @@ const weatherResponse = {
   'cod': 200
 };
 
+const mappedWeather = {
+  'city': 'London',
+  'country': 'GB',
+  'date': 'Tuesday, July 7',
+  'humidity': 45,
+  'icon_id': 804,
+  'temperature': 19.36,
+  'description': 'overcast clouds',
+  'wind_speed': 5.1,
+  'condition': 200
+};
+
+const mappedForecast = {
+  'forecast': [
+    {
+      'date': 'Wednesday, July 8',
+      'humidity': 86,
+      'icon_id': 500,
+      'temperature': 16.41,
+      'description': 'light rain',
+      'wind_speed': 4.48,
+      'mintemp': 16.41,
+      'maxtemp': 16.41,
+      'day': 'Wednesday'
+    },
+    {
+      'date': 'Thursday, July 9',
+      'humidity': 83,
+      'icon_id': 500,
+      'temperature': 16.57,
+      'description': 'light rain',
+      'wind_speed': 4.71,
+      'mintemp': 16.57,
+      'maxtemp': 16.57,
+      'day': 'Thursday'
+    },
+    {
+      'date': 'Friday, July 10',
+      'humidity': 66,
+      'icon_id': 803,
+      'temperature': 13.52,
+      'description': 'broken clouds',
+      'wind_speed': 5.03,
+      'mintemp': 13.52,
+      'maxtemp': 13.52,
+      'day': 'Friday'
+    },
+    {
+      'date': 'Saturday, July 11',
+      'humidity': 62,
+      'icon_id': 800,
+      'temperature': 13,
+      'description': 'clear sky',
+      'wind_speed': 3.38,
+      'mintemp': 13,
+      'maxtemp': 13,
+      'day': 'Saturday'
+    },
+    {
+      'date': 'Sunday, July 12',
+      'humidity': 64,
+      'icon_id': 802,
+      'temperature': 14.61,
+      'description': 'scattered clouds',
+      'wind_speed': 1.41,
+      'mintemp': 14.61,
+      'maxtemp': 14.61,
+      'day': 'Sunday'
+    }
+  ]
+};
+
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   forecastResponse,
-  weatherResponse
+  weatherResponse,
+  mappedWeather,
+  mappedForecast
 };

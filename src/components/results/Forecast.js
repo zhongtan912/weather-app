@@ -46,6 +46,7 @@ function renderDetails(forecast) {
 }
 
 export default function Forecast(props) {
+
     const classes = useStyles();
     const { forecast } = props;
 
