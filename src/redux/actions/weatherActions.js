@@ -19,11 +19,11 @@ export function loadWeather(location) {
 
 export function loadForecast(location) {
     return async dispatch => {
-        dispatch({ type: types.GET_WEATHER });
+        dispatch({ type: types.GET_FORECAST });
         try {
             const res = await getForecast(location);
             dispatch({
-                type: types.GET_WEATHER_SUCCESS,
+                type: types.GET_FORECAST_SUCCESS,
                 data: res.list
             })
         } catch (err) {

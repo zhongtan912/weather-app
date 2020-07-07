@@ -6,7 +6,7 @@ import SearchInput from './SearchInput';
 
 
 function SearchBar(props) {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [location, setLocation] = useState('');
     const [isSearching, setSearching] = useState(false);
     const [hasError, setHasError] = useState(false);
     const [error, setError] = useState(null);
@@ -14,12 +14,13 @@ function SearchBar(props) {
     const handleSubmit = event => {
         event.preventDefault();
         setSearching(true);
-        props.loadWeather(searchTerm);
+        props.loadWeather(location);
+        props.loadForecast(location);
     }
 
     const handleChange = event => {
         setSearching(false);
-        setSearchTerm(event.target.value);
+        setLocation(event.target.value);
         setHasError(false);
     };
 
@@ -31,8 +32,7 @@ function SearchBar(props) {
             setHasError(true);
             setSearching(false);
         }
-        else if (typeof props.weather !== 'undefined' && Object.keys(props.weather).length > 0) {
-            alert(JSON.stringify(props.weather.main));
+        else {
             setSearching(false);
         }
     }, [props]);
