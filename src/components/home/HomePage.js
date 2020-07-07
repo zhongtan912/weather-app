@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Container, Typography } from '@material-ui/core';
-import SearchBar from './SearchBar';
-import WeatherCard from './Weather';
-import ForecastCard from './Forecast';
+import SearchBar from '../search/SearchBar';
+import WeatherCard from '../results/Weather';
+import ForecastCard from '../results/Forecast';
 
 
 function HomePage(props) {
