@@ -9,8 +9,6 @@ import configureMockStore from 'redux-mock-store';
 const middleware = [thunk];
 const mockStore = configureMockStore(middleware);
 
-afterEach(cleanup);
-
 function renderHomePage(args) {
 
     const initialState = {
@@ -24,6 +22,8 @@ function renderHomePage(args) {
 }
 
 describe('Home Page render', () => {
+    afterEach(cleanup);
+
     it('should prompt for input', () => {
         const { getByText } = renderHomePage();
         getByText('Enter city name');

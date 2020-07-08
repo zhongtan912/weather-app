@@ -31,7 +31,7 @@ const SearchInput = (props) => {
         <div className={classes.search}>
             <Grid container justify="center">
                 <Grid item xs={12}>
-                    <form onSubmit={handleSubmit}>
+                    <form data-testid='form' onSubmit={handleSubmit}>
                         <FormControl>
                             <InputLabel htmlFor="search-city">Enter city name</InputLabel>
                             <Input
