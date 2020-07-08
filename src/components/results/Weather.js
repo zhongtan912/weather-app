@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
-import background from './background.png';
+import background from './backgroundsmall.png';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,10 +24,12 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '100%',
         minWidth: '1024px',
         width: '100%',
-        height: 'auto',
+        height: '100%',
         position: 'fixed',
         top: 0,
-        left: 0
+        left: 0,
+        zIndex: -1,
+        opacity: '50%'
     }
 }));
 
@@ -45,8 +47,9 @@ export default function Weather(props) {
 
     return (
         <>
-            <img src={background} className={classes.bgstyle}></img>
+
             <Card role='weather' className={classes.root}>
+                <img src={background} className={classes.bgstyle}></img>
                 <CardHeader className={classes.header}
                     title={weather.city + ', ' + weather.country}
                     subheader={weather.date} />

@@ -1,14 +1,13 @@
 import React from 'react';
 import { Container, Typography } from '@material-ui/core';
-import background from '../results/background.png';
+import background from '../results/backgroundsmall.png';
 
 
 const bgstyle = {
-  minHeight: '100%',
-  minWidth: '1024px',
   width: '100%',
-  height: 'auto',
+  height: '100%',
   position: 'fixed',
+  opacity: '80%',
   top: 0,
   left: 0
 };
