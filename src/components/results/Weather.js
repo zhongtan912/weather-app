@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     divstyle: {
         position: 'relative',
-        height: '480px',
+        height: '450px',
 
     },
     wrapper: {
