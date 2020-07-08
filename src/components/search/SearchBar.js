@@ -26,13 +26,14 @@ function SearchBar(props) {
     useEffect(() => {
         //console.log(props);
         if (props.error) {
-            console.log(props.error);
+            //console.log(props.error);
             setError('No city found');
             setHasError(true);
             setSearching(false);
         }
         else {
             setSearching(false);
+            setHasError(false);
         }
     }, [props]);
 

@@ -19,7 +19,7 @@ function HomePage(props) {
       <Typography variant="h2" gutterBottom>Weather App</Typography>
       <SearchBar />
       {(!error && Object.keys(weather).length > 0) && <WeatherCard weather={weather} />}
-      {(!error && forecast.length > 0) && <ForecastCard forecast={forecast} />}
+      {(!error && Object.keys(weather).length > 0 && forecast.length > 0) && <ForecastCard forecast={forecast} />}
     </Container>
   );
 }
