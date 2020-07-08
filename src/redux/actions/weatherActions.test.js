@@ -57,4 +57,23 @@ describe('Async Actions', () => {
       });
     });
   });
+
+  describe('Load Unsuccessful', () => {
+    it('should create API_CALL_ERROR when loading fails', () => {
+      const axiosResponse = { status: 404, error: 'Some error' };
+      axios.get.mockImplementationOnce(() => Promise.resolve(axiosResponse));
+
+      const expectedActions = [
+        { type: types.GET_FORECAST },
+        { type: types.API_CALL_ERROR, data: new Error('Network response was not ok.') }
+      ];
+
+      const store = mockStore({ forecast: [], weather: {} });
+      return store.dispatch(weatherActions.loadForecast('location')).then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+        expect(axios.get).toHaveBeenCalledTimes(3);
+        expect(axios.get).toHaveBeenCalledWith('undefined/forecast/?q=location&units=metric&APPID=somekey');
+      });
+    });
+  });
 });

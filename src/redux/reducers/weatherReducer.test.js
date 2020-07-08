@@ -4,23 +4,20 @@ import initialState from './initialState';
 import mockData from '../../../tools/mockData';
 
 it('should update weather when passed GET_WEATHER_SUCCESS', () => {
-  // arrange
   const action = { type: types.GET_WEATHER_SUCCESS, data: mockData.weatherResponse };
 
-  // act
   const newState = weatherReducer(initialState, action);
 
-  // assert
   expect(newState.weather).toEqual(mockData.weatherResponse);
 });
 
-it('should update forecast when passed GET_FORECAST_SUCCESS', () => {
-  // arrange
-  const action = { type: types.GET_FORECAST_SUCCESS, data: mockData.forecastResponse.list };
+it('should update error when passed API_CALL_ERROR', () => {
+  const error = new Error('some error');
+  const action = { type: types.API_CALL_ERROR, data: error };
 
-  // act
   const newState = weatherReducer(initialState, action);
 
-  // assert
-  expect(newState.forecast).toEqual(mockData.forecastResponse.list);
+  expect(newState.error).toEqual(error);
 });
+
+
