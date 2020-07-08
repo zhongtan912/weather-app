@@ -29,4 +29,4 @@ npm build
 This will perform all unit tests and start a http-server listening on port 8080.
 
 ## Contact
-If you want to contact me you can reach me at zhongtan912@yahoo.com
+If you want to contact me you can reach me at zhongtan912@gmail.com
