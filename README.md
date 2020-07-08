@@ -28,7 +28,7 @@ npm run test
 
 ### Production
 
-To perform all unit tests and start a http-server listening on port 8080, run
+To perform all unit tests and start a http-server listening on port 8080, run:
 
 ```bash
 npm run build
