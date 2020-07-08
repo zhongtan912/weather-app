@@ -16,20 +16,26 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     content: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center'
+        paddingTop: '20px',
+        color: theme.palette.primary.light
     },
     bgstyle: {
-        minHeight: '100%',
-        minWidth: '1024px',
         width: '100%',
         height: '100%',
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
-        zIndex: -1,
         opacity: '50%'
+    },
+    divstyle: {
+        position: 'relative',
+        height: '400px',
+
+    },
+    wrapper: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr',
+        height: '100%'
     }
 }));
 
@@ -46,29 +52,33 @@ export default function Weather(props) {
     const iconstr = `wi ${icon}`;
 
     return (
-        <>
+        <div role='weather' className={classes.divstyle}>
+            <img src={background} className={classes.bgstyle}></img>
+            <div className={classes.wrapper}>
 
-            <Card role='weather' className={classes.root}>
-                <img src={background} className={classes.bgstyle}></img>
-                <CardHeader className={classes.header}
-                    title={weather.city + ', ' + weather.country}
-                    subheader={weather.date} />
-                <CardContent className={classes.content}>
-                    <Typography variant="h2" style={{ fontFamily: 'Montserrat' }}>
+                <div className={classes.content}>
+                    <Typography variant="h3" style={{ fontFamily: 'Montserrat', display: 'inline' }}>
                         {Math.round(weather.temperature)}&deg;
-        </Typography>
-                    <i className={iconstr} style={{ fontSize: '70px' }} component='div'></i>
-                </CardContent>
-                <CardContent className={classes.content}>
+</Typography>
+                    <i className={iconstr} style={{ fontSize: '35px' }} ></i>
                     <Typography
                         variant="subtitle2"
                         color="textSecondary"
                         gutterBottom
                     >
                         {desc} / {weather.wind_speed}ms
-        </Typography>
-                </CardContent>
-            </Card >
-        </>
+</Typography>
+                </div>
+
+                <div>
+                    <CardHeader className={classes.header}
+                        title={weather.city + ', ' + weather.country}
+                        subheader={weather.date} />
+                </div>
+
+            </div>
+
+        </div>
     );
 }
+
