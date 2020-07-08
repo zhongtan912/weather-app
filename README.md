@@ -19,6 +19,12 @@ npm start
 
 This will start a webpack development server listening on port 3000.
 
+To run tests in local, run:
+```bash
+npm run test
+```
+
+
 ### Production
 For production environment, run:
 
