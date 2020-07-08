@@ -1497,7 +1497,7 @@ const mappedForecast =
   ];
 
 
-// Using CommonJS style export so we can consume via Node (without using Babel-node)
+// Using CommonJS style export so can consume via Node (without using Babel-node)
 module.exports = {
   forecastResponse,
   weatherResponse,

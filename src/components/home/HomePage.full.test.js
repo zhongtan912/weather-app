@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, screen, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import axios from 'axios';
 import store from '../../redux/store';
