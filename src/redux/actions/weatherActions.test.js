@@ -13,10 +13,10 @@ jest.mock('axios');
 describe('Async Actions', () => {
 
   beforeAll(() => {
-    process.env.API_URL = JSON.stringify('http://example.com');
+    process.env.API_URL = 'http://example.com';
     process.env.API_KEY = 'somekey';
   });
-  afterEach(() => jest.restoreAllMocks());
+  afterEach(() => jest.resetAllMocks());
 
   describe('Load Weather Thunk', () => {
     it('should create GET_WEATHER_SUCCESS when loading weather', () => {
@@ -32,7 +32,7 @@ describe('Async Actions', () => {
       return store.dispatch(weatherActions.loadWeather('location')).then(() => {
         expect(store.getActions()).toEqual(expectedActions);
         expect(axios.get).toHaveBeenCalledTimes(1);
-        expect(axios.get).toHaveBeenCalledWith('undefined/weather/?q=location&units=metric&APPID=somekey');
+        expect(axios.get).toHaveBeenCalledWith('http://example.com/weather/?q=location&units=metric&APPID=somekey');
       });
     });
   });
@@ -52,8 +52,8 @@ describe('Async Actions', () => {
       const store = mockStore({ forecast: [], weather: {} });
       return store.dispatch(weatherActions.loadForecast('location')).then(() => {
         expect(store.getActions()).toEqual(expectedActions);
-        expect(axios.get).toHaveBeenCalledTimes(2);
-        expect(axios.get).toHaveBeenCalledWith('undefined/forecast/?q=location&units=metric&APPID=somekey');
+        expect(axios.get).toHaveBeenCalledTimes(1);
+        expect(axios.get).toHaveBeenCalledWith('http://example.com/forecast/?q=location&units=metric&APPID=somekey');
       });
     });
   });
@@ -71,8 +71,8 @@ describe('Async Actions', () => {
       const store = mockStore({ forecast: [], weather: {} });
       return store.dispatch(weatherActions.loadForecast('location')).then(() => {
         expect(store.getActions()).toEqual(expectedActions);
-        expect(axios.get).toHaveBeenCalledTimes(3);
-        expect(axios.get).toHaveBeenCalledWith('undefined/forecast/?q=location&units=metric&APPID=somekey');
+        expect(axios.get).toHaveBeenCalledTimes(1);
+        expect(axios.get).toHaveBeenCalledWith('http://example.com/forecast/?q=location&units=metric&APPID=somekey');
       });
     });
   });
