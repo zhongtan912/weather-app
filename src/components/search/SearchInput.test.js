@@ -25,6 +25,17 @@ describe('Search input tests', () => {
         getByText('Enter city name');
     });
 
+    it('should display error when error', () => {
+        const { getByText } = renderSearchInput({ hasError: true, error: 'No city found' });
+        getByText('No city found');
+    });
+
+    it('should display spinner when loading', () => {
+        const { getByRole } = renderSearchInput({ isSearching: true });
+        getByRole('progressbar');
+    });
+
+
     it('should trigger handleChange function on user input', () => {
         const mockHandleChange = jest.fn();
         const { getByLabelText } = renderSearchInput({ handleChange: mockHandleChange });

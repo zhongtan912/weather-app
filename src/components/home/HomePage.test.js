@@ -24,15 +24,10 @@ function renderHomePage(args) {
 describe('Home Page render', () => {
     afterEach(cleanup);
 
-    it('should prompt for input', () => {
-        const { getByText } = renderHomePage();
-        getByText('Enter city name');
-    });
-
-    it('should display error when error', () => {
-        const { getByText, queryByRole } = renderHomePage({ error: 'some error' });
-        getByText('No city found');
+    it('should hide results when error', () => {
+        const { queryByRole } = renderHomePage({ error: 'some error' });
         expect(queryByRole('weather')).toBeNull();
+        expect(queryByRole('forecast')).toBeNull();
     });
 
     it('should display weather data when data is present', () => {
