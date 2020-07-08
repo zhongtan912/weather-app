@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         paddingTop: '20px',
-        color: theme.palette.primary.light
+        color: theme.palette.text.secondary
     },
     bgstyle: {
         width: '100%',
@@ -63,7 +63,6 @@ export default function Weather(props) {
                     <i className={iconstr} style={{ fontSize: '35px' }} ></i>
                     <Typography
                         variant="subtitle2"
-                        color="textSecondary"
                         gutterBottom
                     >
                         {desc} / {weather.wind_speed}ms

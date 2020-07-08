@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: '80%',
         borderRadius: '0px',
         '&:hover': {
-            color: theme.palette.text.primary,
+            color: theme.palette.secondary.main,
             opacity: '100%',
             boxShadow: '5px 10px #BDC9D7'
         }
@@ -36,14 +36,12 @@ function renderDetails(forecast, classes) {
             <Grid key={i} item xs>
                 <Card className={classes.paper}>
                     <CardContent >
-                        <Typography gutterBottom variant="h5" color="textPrimary">
+                        <Typography gutterBottom variant="h5">
                             {curr.day.substring(0, 3)}
                         </Typography>
-                        <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px', color: theme.palette.primary.light }}></i>
-                        <Typography variant="body2" component="span" color="textPrimary">
-                            {Math.round(curr.mintemp)}&deg; /{' '}
-                        </Typography>
-                        <Typography variant="body2" component="span" color="textSecondary">
+                        <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px' }}></i>
+                        <Typography variant="body2" component="span">
+                            <strong>   {Math.round(curr.mintemp)}&deg; /{' '} </strong>
                             {Math.round(curr.maxtemp)}&deg;
           </Typography>
                     </CardContent>
