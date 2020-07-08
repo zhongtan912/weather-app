@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography } from '@material-ui/core';
-import background from '../results/backgroundsmall.png';
+// import background from '../results/backgroundsmall.png';
 
 
 const bgstyle = {
@@ -15,7 +15,7 @@ const bgstyle = {
 const AboutPage = () => (
 
   <div >
-    <img src={background} style={bgstyle}></img>
+    {/* <img src={background} style={bgstyle}></img> */}
     <Container>
       <Typography variant="h2" component="h2" gutterBottom>About</Typography>
       <Typography variant="body1" gutterBottom>

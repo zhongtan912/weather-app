@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
@@ -17,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: '80%',
         borderRadius: '0px',
         '&:hover': {
-            color: theme.palette.secondary.main,
+            color: theme.palette.primary.main,
             opacity: '100%',
             boxShadow: '5px 10px #BDC9D7'
         }
@@ -25,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function renderDetails(forecast, classes) {
-    const theme = useTheme();
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
@@ -63,7 +59,7 @@ export default function Forecast(props) {
     const { forecast } = props;
 
     return (
-        <div role='forecast' className={classes.root}>
+        <div role='forecast' >
             <Grid container spacing={0}>
                 {renderDetails(forecast, classes)}
             </Grid>

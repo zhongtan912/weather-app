@@ -10,12 +10,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-end'
+  },
+  appBar: {
+    marginBottom: '15px',
+    color: theme.palette.primary.light
   },
   menuButton: {
     paddingLeft: '30px',
-    marginRight: theme.spacing(2),
-    alignSelf: 'flex-start'
+    marginRight: theme.spacing(2)
   },
   title: {
     flexGrow: 1,
@@ -38,15 +41,13 @@ const Header = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ marginBottom: '15px' }}>
-        <IconButton className={classes.menuButton} edge="start" color="inherit" aria-label="menu" onClick={handleClick} >
-          <MenuIcon />
-        </IconButton>
-        <Menu id="nav-bar" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuItem to="/" component={Link} onClick={handleClose}>Home</MenuItem>
-          <MenuItem to="/about" component={Link} onClick={handleClose}>About</MenuItem>
-        </Menu>
-      </AppBar>
+      <IconButton className={classes.menuButton} edge="start" color="inherit" aria-label="menu" onClick={handleClick} >
+        <MenuIcon />
+      </IconButton>
+      <Menu id="nav-bar" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+        <MenuItem to="/" component={Link} onClick={handleClose}>Home</MenuItem>
+        <MenuItem to="/about" component={Link} onClick={handleClose}>About</MenuItem>
+      </Menu>
     </div >
 
   );

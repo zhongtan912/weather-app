@@ -19,7 +19,8 @@ const useStyles = makeStyles(theme => ({
         padding: '10px'
     },
     search: {
-        marginTop: '10px'
+        marginTop: '10px',
+        paddingLeft: '10px'
     }
 }));
 

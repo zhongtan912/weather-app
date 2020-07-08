@@ -6,18 +6,19 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
-import background from './backgroundsmall.png';
+import background from './homeBackground.png';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275
     },
     header: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: theme.palette.primary.dark
     },
     content: {
         paddingTop: '20px',
-        color: theme.palette.text.secondary
+        color: theme.palette.primary.main
     },
     bgstyle: {
         width: '100%',
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     divstyle: {
         position: 'relative',
-        height: '400px',
+        height: '500px',
 
     },
     wrapper: {

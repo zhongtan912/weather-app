@@ -10,10 +10,10 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#303f9f'
+      main: '#234E4F'
     },
     secondary: {
-      main: '#402DB5'
+      main: '#99CECF'
     },
     error: {
       main: '#d32f2f'
@@ -21,7 +21,8 @@ const theme = createMuiTheme({
     typography: {
       fontFamily: ['IBM Plex Sans', 'Montserrat', 'sans-serif'],
       h2: {
-        paddingTop: '15px'
+        paddingTop: '15px',
+        color: '#183637'
       }
     }
   }
