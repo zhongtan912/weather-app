@@ -59,7 +59,7 @@ export default function Forecast(props) {
     const { forecast } = props;
 
     return (
-        <div role='forecast' >
+        <div role='forecast' style={{ flexGrow: 1 }} >
             <Grid container spacing={0}>
                 {renderDetails(forecast, classes)}
             </Grid>
