@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, Card, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function renderDetails(forecast, classes) {
+    const theme = useTheme();
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
@@ -35,10 +36,10 @@ function renderDetails(forecast, classes) {
             <Grid key={i} item xs>
                 <Card className={classes.paper}>
                     <CardContent >
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h5" color="textPrimary">
                             {curr.day.substring(0, 3)}
                         </Typography>
-                        <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px' }} component='div'></i>
+                        <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px', color: theme.palette.primary.light }}></i>
                         <Typography variant="body2" component="span" color="textPrimary">
                             {Math.round(curr.mintemp)}&deg; /{' '}
                         </Typography>
