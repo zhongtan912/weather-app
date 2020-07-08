@@ -25,7 +25,7 @@ describe('Home Page render', () => {
     afterEach(cleanup);
 
     it('should hide results when error', () => {
-        const { queryByRole } = renderHomePage({ error: 'some error' });
+        const { queryByRole } = renderHomePage({ error: new Error('some error') });
         expect(queryByRole('weather')).toBeNull();
         expect(queryByRole('forecast')).toBeNull();
     });

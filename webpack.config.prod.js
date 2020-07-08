@@ -49,6 +49,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpg|gif)$/i,
+        use: ['file-loader'],
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader", "eslint-loader"]

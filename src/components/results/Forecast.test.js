@@ -12,10 +12,10 @@ function renderForecast() {
 describe('Forecast card render', () => {
     it('should render days of the week', () => {
         const { getByText } = renderForecast();
-        getByText('Wednesday');
-        getByText('Thursday');
-        getByText('Friday');
-        getByText('Saturday');
+        getByText('Wed');
+        getByText('Thu');
+        getByText('Fri');
+        getByText('Sat');
     });
 
     it('should render the forecast temperature as 17', () => {

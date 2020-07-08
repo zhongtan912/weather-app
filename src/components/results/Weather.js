@@ -6,10 +6,11 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
+import background from './background.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        minWidth: 275,
+        minWidth: 275
     },
     header: {
         textAlign: 'center'
@@ -18,8 +19,17 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center'
+    },
+    bgstyle: {
+        minHeight: '100%',
+        minWidth: '1024px',
+        width: '100%',
+        height: 'auto',
+        position: 'fixed',
+        top: 0,
+        left: 0
     }
-});
+}));
 
 Weather.propTypes = {
     weather: PropTypes.object
@@ -34,25 +44,28 @@ export default function Weather(props) {
     const iconstr = `wi ${icon}`;
 
     return (
-        <Card role='weather' className={classes.root}>
-            <CardHeader className={classes.header}
-                title={weather.city + ', ' + weather.country}
-                subheader={weather.date} />
-            <CardContent className={classes.content}>
-                <Typography variant="h2" style={{ fontFamily: 'Montserrat' }}>
-                    {Math.round(weather.temperature)}&deg;
+        <>
+            <img src={background} className={classes.bgstyle}></img>
+            <Card role='weather' className={classes.root}>
+                <CardHeader className={classes.header}
+                    title={weather.city + ', ' + weather.country}
+                    subheader={weather.date} />
+                <CardContent className={classes.content}>
+                    <Typography variant="h2" style={{ fontFamily: 'Montserrat' }}>
+                        {Math.round(weather.temperature)}&deg;
         </Typography>
-                <i className={iconstr} style={{ fontSize: '70px' }} component='div'></i>
-            </CardContent>
-            <CardContent className={classes.content}>
-                <Typography
-                    variant="subtitle2"
-                    color="textSecondary"
-                    gutterBottom
-                >
-                    {desc} / {weather.wind_speed}ms
+                    <i className={iconstr} style={{ fontSize: '70px' }} component='div'></i>
+                </CardContent>
+                <CardContent className={classes.content}>
+                    <Typography
+                        variant="subtitle2"
+                        color="textSecondary"
+                        gutterBottom
+                    >
+                        {desc} / {weather.wind_speed}ms
         </Typography>
-            </CardContent>
-        </Card >
+                </CardContent>
+            </Card >
+        </>
     );
 }
