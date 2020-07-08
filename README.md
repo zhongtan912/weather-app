@@ -1,5 +1,7 @@
 # Weather App
 
+Weather App to get the weather for a particular city.
+
 ## Installation
 
 To install weather app, run the following command in the root folder:
@@ -11,28 +13,31 @@ npm install
 ## Usage
 
 ### Local
-For local development, run:
+
+To start a webpack development server listening on port 3000, run:
 
 ```bash
-npm start
+npm run start
 ```
 
-This will start a webpack development server listening on port 3000.
-
 To run tests in local, run:
+
 ```bash
 npm run test
 ```
 
-
 ### Production
-For production environment, run:
+
+To perform all unit tests and start a http-server listening on port 8080, run
 
 ```bash
-npm build
+npm run build
 ```
 
-This will perform all unit tests and start a http-server listening on port 8080.
+## Screenshot
 
-## Contact
-If you want to contact me you can reach me at zhongtan912@gmail.com
+![home page](/screenshots/homePage.png)
+
+## Author
+
+- Caleb Tan
