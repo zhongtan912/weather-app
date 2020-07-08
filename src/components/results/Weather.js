@@ -29,7 +29,7 @@ export default function Weather(props) {
     const iconstr = `wi ${icon}`;
 
     return (
-        <Card className={classes.root}>
+        <Card role='weather' className={classes.root}>
             <CardHeader className={classes.header}
                 title={weather.city + ', ' + weather.country}
                 subheader={weather.date} />
