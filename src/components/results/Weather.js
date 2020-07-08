@@ -15,7 +15,8 @@ const useStyles = makeStyles({
     },
     content: {
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'center'
     }
 });
 
