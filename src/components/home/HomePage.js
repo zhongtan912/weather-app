@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Container, Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import SearchBar from '../search/SearchBar';
 import WeatherCard from '../results/Weather';
 import ForecastCard from '../results/Forecast';
@@ -60,6 +61,12 @@ function mapForecast(list) {
       return mapped;
     });
 }
+
+HomePage.propTypes = {
+  weather: PropTypes.object,
+  forecast: PropTypes.array,
+  error: PropTypes.object
+};
 
 
 export default connect(

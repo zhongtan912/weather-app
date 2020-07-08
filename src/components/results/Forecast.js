@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
@@ -44,6 +45,11 @@ function renderDetails(forecast) {
 
     return cards;
 }
+
+Forecast.propTypes = {
+    forecast: PropTypes.array
+};
+
 
 export default function Forecast(props) {
 

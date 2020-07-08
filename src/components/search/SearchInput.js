@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     FormControl,
     Grid,
@@ -62,6 +63,14 @@ const SearchInput = (props) => {
             </Grid>
         </div>
     );
+};
+
+SearchInput.propTypes = {
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    error: PropTypes.string,
+    hasError: PropTypes.bool.isRequired,
+    isSearching: PropTypes.bool.isRequired
 };
 
 export default SearchInput;

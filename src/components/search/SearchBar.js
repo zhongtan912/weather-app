@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import * as weatherActions from '../../redux/actions/weatherActions';
 import SearchInput from './SearchInput';
+import PropTypes from 'prop-types';
 
 
 function SearchBar(props) {
@@ -12,6 +13,13 @@ function SearchBar(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
+
+        if (location === '') {
+            setError('No city entered');
+            setHasError(true);
+            return;
+        }
+
         setSearching(true);
         props.loadWeather(location);
         props.loadForecast(location);
@@ -58,6 +66,12 @@ function mapDispatchToProps(dispatch) {
         loadForecast: (location) => dispatch(weatherActions.loadForecast(location))
     };
 }
+
+SearchBar.propTypes = {
+    loadWeather: PropTypes.func.isRequired,
+    loadForecast: PropTypes.func.isRequired,
+    error: PropTypes.object
+};
 
 export default connect(
     mapStateToProps,
