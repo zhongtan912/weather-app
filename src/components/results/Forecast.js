@@ -14,10 +14,17 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-    },
+        opacity: '80%',
+        borderRadius: '0px',
+        '&:hover': {
+            color: theme.palette.text.primary,
+            opacity: '100%',
+            boxShadow: '5px 10px #BDC9D7'
+        }
+    }
 }));
 
-function renderDetails(forecast) {
+function renderDetails(forecast, classes) {
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
@@ -26,10 +33,10 @@ function renderDetails(forecast) {
         const iconstr = `wi ${icon}`;
         cards.push(
             <Grid key={i} item xs>
-                <Card>
-                    <CardContent>
+                <Card className={classes.paper}>
+                    <CardContent >
                         <Typography gutterBottom variant="h5" component="h2">
-                            {curr.day}
+                            {curr.day.substring(0, 3)}
                         </Typography>
                         <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px' }} component='div'></i>
                         <Typography variant="body2" component="span" color="textPrimary">
@@ -59,7 +66,7 @@ export default function Forecast(props) {
     return (
         <div role='forecast' className={classes.root}>
             <Grid container spacing={0}>
-                {renderDetails(forecast)}
+                {renderDetails(forecast, classes)}
             </Grid>
         </div>
     );
