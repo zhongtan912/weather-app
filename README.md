@@ -1,9 +1,7 @@
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+<div align="center">
     <img src="screenshots/weather.png" alt="Logo" width="80" height="80">
-  </a>
-  <h2 align="center">Weather App</h3>
-</p>
+    <h2 align="center">Weather App</h2>
+</div>
 
 ## Table of Contents
 
