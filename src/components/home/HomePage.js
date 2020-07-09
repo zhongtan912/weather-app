@@ -18,7 +18,6 @@ function HomePage(props) {
 
   const changeTemp = () => setFarenheit(!farenheit);
 
-
   return (
     <Container>
       <Typography variant="h2" gutterBottom>Weather App</Typography>

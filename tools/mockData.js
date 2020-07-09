@@ -1432,6 +1432,7 @@ const mappedWeather = {
   'humidity': 45,
   'icon_id': 804,
   'temperature': 20,
+  'temperatureF': 67,
   'description': 'overcast clouds',
   'wind_speed': 5.1,
   'condition': 200

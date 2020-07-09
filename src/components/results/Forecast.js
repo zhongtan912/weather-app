@@ -49,7 +49,8 @@ function renderDetails(forecast, classes, farenheit) {
 }
 
 Forecast.propTypes = {
-    forecast: PropTypes.array
+    forecast: PropTypes.array,
+    farenheit: PropTypes.bool.isRequired
 };
 
 

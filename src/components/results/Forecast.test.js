@@ -6,7 +6,7 @@ import Forecast from './Forecast';
 afterEach(cleanup);
 
 function renderForecast() {
-    return render(<Forecast forecast={mappedForecast} />);
+    return render(<Forecast forecast={mappedForecast} farenheit={false} />);
 }
 
 describe('Forecast card render', () => {

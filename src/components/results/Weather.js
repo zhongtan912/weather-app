@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 Weather.propTypes = {
-    weather: PropTypes.object
+    weather: PropTypes.object,
+    changeTemp: PropTypes.func.isRequired
 };
 
 export default function Weather(props) {
@@ -88,11 +89,9 @@ export default function Weather(props) {
                 </div>
 
                 <div className={classes.content}>
-                    <Switch classes={switchStyle} checked={toggled} onChange={handleToggle} />
+                    <Switch role='toggle' classes={switchStyle} checked={toggled} onChange={handleToggle} />
                 </div>
-
             </div>
-
         </div>
     );
 }
