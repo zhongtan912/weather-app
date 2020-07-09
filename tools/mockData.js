@@ -1449,6 +1449,8 @@ const mappedForecast =
       'wind_speed': 4.48,
       'mintemp': 17,
       'maxtemp': 17,
+      'mintempF': 63,
+      'maxtempF': 63,
       'day': 'Wednesday'
     },
     {
@@ -1460,6 +1462,8 @@ const mappedForecast =
       'wind_speed': 4.71,
       'mintemp': 17,
       'maxtemp': 17,
+      'mintempF': 63,
+      'maxtempF': 63,
       'day': 'Thursday'
     },
     {
@@ -1471,6 +1475,8 @@ const mappedForecast =
       'wind_speed': 5.03,
       'mintemp': 14,
       'maxtemp': 14,
+      'mintempF': 57,
+      'maxtempF': 57,
       'day': 'Friday'
     },
     {
@@ -1482,6 +1488,8 @@ const mappedForecast =
       'wind_speed': 3.38,
       'mintemp': 13,
       'maxtemp': 13,
+      'mintempF': 55,
+      'maxtempF': 55,
       'day': 'Saturday'
     },
     {
@@ -1493,6 +1501,8 @@ const mappedForecast =
       'wind_speed': 1.41,
       'mintemp': 15,
       'maxtemp': 15,
+      'mintempF': 59,
+      'maxtempF': 59,
       'day': 'Sunday'
     }
   ];
