@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function renderDetails(forecast, classes) {
+function renderDetails(forecast, classes, farenheit) {
     const cards = [];
     for (let i = 0; i < 5; i++) {
         const curr = forecast[i];
@@ -37,8 +37,8 @@ function renderDetails(forecast, classes) {
                         </Typography>
                         <i className={iconstr} style={{ display: 'block', fontSize: '50px', paddingBottom: '10px' }}></i>
                         <Typography variant="body2" component="span">
-                            <strong>   {Math.round(curr.mintemp)}&deg; /{' '} </strong>
-                            {Math.round(curr.maxtemp)}&deg;
+                            <strong>  {farenheit ? curr.mintempF : curr.mintemp}&deg; /{' '} </strong>
+                            {farenheit ? curr.maxtempF : curr.maxtemp}&deg;
           </Typography>
                     </CardContent>
                 </Card>
@@ -56,12 +56,12 @@ Forecast.propTypes = {
 export default function Forecast(props) {
 
     const classes = useStyles();
-    const { forecast } = props;
+    const { forecast, farenheit } = props;
 
     return (
         <div role='forecast' style={{ flexGrow: 1 }} >
             <Grid container spacing={0}>
-                {renderDetails(forecast, classes)}
+                {renderDetails(forecast, classes, farenheit)}
             </Grid>
         </div>
     );

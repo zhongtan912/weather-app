@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import Switch from '@material-ui/core/Switch';
 import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import WeatherIcons from './WeatherIcons';
 import background from './homeBackground.png';
+import useSwitchStyle from './switchStyle';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,11 +49,19 @@ Weather.propTypes = {
 
 export default function Weather(props) {
 
+    const switchStyle = useSwitchStyle();
     const classes = useStyles();
-    const { weather } = props;
+    const { weather, changeTemp } = props;
+    const [toggled, setToggled] = useState(false);
+
     const desc = weather.description.split(' ').map(word => (word.charAt(0).toUpperCase() + word.slice(1))).join(' ');
     const icon = WeatherIcons[Math.floor((weather.icon_id) / 100)];
     const iconstr = `wi ${icon}`;
+
+    const handleToggle = event => {
+        setToggled(event.target.checked);
+        changeTemp(event);
+    };
 
     return (
         <div role='weather' className={classes.divstyle}>
@@ -59,7 +70,7 @@ export default function Weather(props) {
 
                 <div className={classes.content}>
                     <Typography variant="h3" style={{ fontFamily: 'Montserrat', display: 'inline' }}>
-                        {Math.round(weather.temperature)}&deg;
+                        {toggled ? weather.temperatureF : weather.temperature}&deg;
 </Typography>
                     <i className={iconstr} style={{ fontSize: '35px' }} ></i>
                     <Typography
@@ -74,6 +85,10 @@ export default function Weather(props) {
                     <CardHeader className={classes.header}
                         title={weather.city + ', ' + weather.country}
                         subheader={weather.date} />
+                </div>
+
+                <div className={classes.content}>
+                    <Switch classes={switchStyle} checked={toggled} onChange={handleToggle} />
                 </div>
 
             </div>

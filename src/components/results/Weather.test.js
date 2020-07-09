@@ -15,9 +15,9 @@ describe('Weather card render', () => {
         getByText('London, GB');
     });
 
-    it('should render the temperature as 19', () => {
+    it('should render the temperature as 20', () => {
         const { getByText } = renderWeather();
-        getByText('19\xB0');
+        getByText('20\xB0');
     });
 
     it('should render the description as overcast clouds and wind speed 5.1ms', () => {

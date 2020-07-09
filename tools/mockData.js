@@ -1431,7 +1431,7 @@ const mappedWeather = {
   'date': 'Tuesday, July 7',
   'humidity': 45,
   'icon_id': 804,
-  'temperature': 19.36,
+  'temperature': 20,
   'description': 'overcast clouds',
   'wind_speed': 5.1,
   'condition': 200
@@ -1446,8 +1446,8 @@ const mappedForecast =
       'temperature': 16.41,
       'description': 'light rain',
       'wind_speed': 4.48,
-      'mintemp': 16.41,
-      'maxtemp': 16.41,
+      'mintemp': 17,
+      'maxtemp': 17,
       'day': 'Wednesday'
     },
     {
@@ -1457,8 +1457,8 @@ const mappedForecast =
       'temperature': 16.57,
       'description': 'light rain',
       'wind_speed': 4.71,
-      'mintemp': 16.57,
-      'maxtemp': 16.57,
+      'mintemp': 17,
+      'maxtemp': 17,
       'day': 'Thursday'
     },
     {
@@ -1468,8 +1468,8 @@ const mappedForecast =
       'temperature': 13.52,
       'description': 'broken clouds',
       'wind_speed': 5.03,
-      'mintemp': 13.52,
-      'maxtemp': 13.52,
+      'mintemp': 14,
+      'maxtemp': 14,
       'day': 'Friday'
     },
     {
@@ -1490,8 +1490,8 @@ const mappedForecast =
       'temperature': 14.61,
       'description': 'scattered clouds',
       'wind_speed': 1.41,
-      'mintemp': 14.61,
-      'maxtemp': 14.61,
+      'mintemp': 15,
+      'maxtemp': 15,
       'day': 'Sunday'
     }
   ];

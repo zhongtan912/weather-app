@@ -19,8 +19,8 @@ describe('Forecast card render', () => {
     });
 
     it('should render the forecast temperature as 17', () => {
-        const { getByText } = renderForecast();
-        getByText('17\xB0');
+        const { getAllByText } = renderForecast();
+        getAllByText('17\xB0');
     });
 
 });

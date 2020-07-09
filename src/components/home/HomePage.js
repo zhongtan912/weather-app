@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Container, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
@@ -10,20 +10,26 @@ import ForecastCard from '../results/Forecast';
 function HomePage(props) {
 
   const { weather, forecast, error } = props;
+  const [farenheit, setFarenheit] = useState(false);
 
   useEffect(() => {
     //console.log(props);
   }, [props]);
 
+  const changeTemp = () => setFarenheit(!farenheit);
+
+
   return (
     <Container>
       <Typography variant="h2" gutterBottom>Weather App</Typography>
       <SearchBar />
-      {(!error && Object.keys(weather).length > 0) && <WeatherCard weather={weather} />}
-      {(!error && Object.keys(weather).length > 0 && forecast.length > 0) && <ForecastCard forecast={forecast} />}
+      {(!error && Object.keys(weather).length > 0) && <WeatherCard weather={weather} changeTemp={changeTemp} />}
+      {(!error && Object.keys(weather).length > 0 && forecast.length > 0) && <ForecastCard forecast={forecast} farenheit={farenheit} />}
     </Container>
   );
 }
+
+const convertCtoF = degC => ((degC * 9 / 5) + 32);
 
 function mapStateToProps(state) {
   if (state.error)
@@ -42,7 +48,8 @@ function mapWeather(data) {
     date: new Date(data.dt * 1000).toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
     humidity: data.main.humidity,
     icon_id: data.weather[0].id,
-    temperature: data.main.temp,
+    temperature: Math.round(data.main.temp),
+    temperatureF: Math.round(convertCtoF(data.main.temp)),
     description: data.weather[0].description,
     wind_speed: data.wind.speed,
     condition: data.cod
@@ -55,8 +62,10 @@ function mapForecast(list) {
   })
     .map((data) => {
       const mapped = mapWeather(data);
-      mapped.mintemp = data.main.temp_min;
-      mapped.maxtemp = data.main.temp_max;
+      mapped.mintemp = Math.round(data.main.temp_min);
+      mapped.maxtemp = Math.round(data.main.temp_max);
+      mapped.mintempF = Math.round(convertCtoF(data.main.temp_min));
+      mapped.maxtempF = Math.round(convertCtoF(data.main.temp_max));
       mapped.day = new Date(data.dt * 1000).toLocaleString('en-US', { weekday: 'long' });
       return mapped;
     });
