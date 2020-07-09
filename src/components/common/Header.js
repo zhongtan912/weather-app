@@ -12,12 +12,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end'
   },
   menuButton: {
-    paddingLeft: '30px',
     marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1,
-  },
+  }
 }));
 
 
