@@ -2,7 +2,6 @@
     <a href="https://github.com/zhongtan912/weather-app">
         <img src="screenshots/weather.png" alt="Logo" width="80" height="80">
     </a>
-    <h3 align="center">Weather App</h3>
 </div>
 
 ## Table of Contents
