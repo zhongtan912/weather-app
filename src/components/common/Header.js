@@ -11,10 +11,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end'
   },
-  appBar: {
-    marginBottom: '15px',
-    color: theme.palette.primary.light
-  },
   menuButton: {
     paddingLeft: '30px',
     marginRight: theme.spacing(2)

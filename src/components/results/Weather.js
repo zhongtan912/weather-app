@@ -16,14 +16,16 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         paddingTop: '20px',
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
+        textAlign: 'center'
     },
     bgstyle: {
-        width: '100%',
+        width: 'auto',
         height: '100%',
         position: 'absolute',
         top: 0,
-        left: 0,
+        left: '50%',
+        transform: 'translate(-50%)',
         opacity: '50%'
     },
     divstyle: {

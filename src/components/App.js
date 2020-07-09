@@ -21,7 +21,6 @@ const theme = createMuiTheme({
     typography: {
       fontFamily: ['IBM Plex Sans', 'Montserrat', 'sans-serif'],
       h2: {
-        paddingTop: '15px',
         color: '#183637'
       }
     }
